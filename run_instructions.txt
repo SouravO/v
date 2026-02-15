@@ -1,0 +1,15 @@
+To run the application and fix Tailwind CSS loading issue:
+
+1.  Open your terminal in the project's root directory (`/Users/sourav/workssss/untitled folder/react-valentine/`).
+2.  **Run these commands in order to clean cache and reinstall dependencies:**
+    ```bash
+    npm cache clean --force
+    npm install
+    ```
+3.  Start the development server:
+    ```bash
+    npm start
+    ```
+4.  Open your web browser and navigate to `http://localhost:3000` (or the address provided by the `npm start` command).
+
+Please try these steps. If Tailwind CSS still isn't loading, let me know, and we can investigate further.
