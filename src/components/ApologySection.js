@@ -45,16 +45,18 @@ const ApologySection = ({ onNext }) => {
   };
 
   return (
-    <div className="text-center p-8 max-w-xl min-h-screen flex flex-col justify-center items-center">
-      <h1 id="apologyText" className="text-3xl font-bold mb-8 text-[#ff4d6d]">
+    <div style={apologyStyles.container}>
+      <h1 id="apologyText" style={apologyStyles.heading}>
         My Dearest Love, I'm so sorry I missed Valentine's Day! <br/>
         Please forgive me and let me make it up to you with a special date?
       </h1>
-      <div className="relative mt-8 w-full h-[500px]">
+      <div style={apologyStyles.buttonContainer}>
         <button
           id="yesButton"
-          className="absolute bg-[#ff4d6d] text-white border-none px-8 py-4 text-lg rounded-full cursor-pointer m-2 shadow-md hover:bg-[#ff85a1] hover:scale-105 transition-all duration-200 ease-in-out"
           style={{
+            ...apologyStyles.buttonBase,
+            ...apologyStyles.buttonYes,
+            position: 'absolute',
             left: `${yesPosition.x}px`,
             top: `${yesPosition.y}px`,
           }}
@@ -66,8 +68,10 @@ const ApologySection = ({ onNext }) => {
         </button>
         <button
           id="noButton"
-          className="absolute bg-[#adb5bd] text-white border-none px-8 py-4 text-lg rounded-full cursor-pointer m-2 shadow-md hover:bg-[#ff85a1] hover:scale-105 transition-all duration-200 ease-in-out"
           style={{
+            ...apologyStyles.buttonBase,
+            ...apologyStyles.buttonNo,
+            position: 'absolute',
             left: `${noPosition.x}px`,
             top: `${noPosition.y}px`,
           }}
@@ -80,6 +84,57 @@ const ApologySection = ({ onNext }) => {
       </div>
     </div>
   );
+};
+
+const apologyStyles = {
+  container: {
+    textAlign: 'center',
+    padding: '30px',
+    maxWidth: '600px',
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  heading: {
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    marginBottom: '2rem',
+    color: '#ff4d6d',
+  },
+  buttonContainer: {
+    position: 'relative',
+    marginTop: '2rem',
+    width: '100%',
+    height: '500px',
+  },
+  buttonBase: {
+    border: 'none',
+    padding: '16px 32px',
+    fontSize: '1.125rem',
+    borderRadius: '9999px', // rounded-full
+    cursor: 'pointer',
+    margin: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+    transition: 'all 0.2s ease-in-out', // hover:scale-105 transition-all duration-200 ease-in-out
+  },
+  buttonYes: {
+    backgroundColor: '#ff4d6d',
+    color: 'white',
+    '&:hover': {
+      backgroundColor: '#ff85a1', // hover:bg-[#ff85a1]
+      transform: 'scale(1.05)',
+    }
+  },
+  buttonNo: {
+    backgroundColor: '#adb5bd',
+    color: 'white',
+    '&:hover': {
+      backgroundColor: '#ff85a1', // hover:bg-[#ff85a1]
+      transform: 'scale(1.05)',
+    }
+  },
 };
 
 export default ApologySection;
