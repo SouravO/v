@@ -156,7 +156,7 @@ _Assistant Note: She's waiting. Don't be late again or I'm deleting your admin a
     `.trim();
     
    // Replace 91XXXXXXXXXX with your actual mobile number
-window.location.href = `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(summary)}`;
+window.location.href = `https://wa.me/918078928275?text=${encodeURIComponent(summary)}`;
 };
   return (
     <div style={styles.container}>
