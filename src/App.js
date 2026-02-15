@@ -7,9 +7,6 @@ import RomanticCard from './components/RomanticCard';
 const App = () => {
   const [phase, setPhase] = useState('loading');
   const [progress, setProgress] = useState(0);
-  const [noCount, setNoCount] = useState(0); 
-  const [noStyle, setNoStyle] = useState({}); 
-  const [yesScale, setYesScale] = useState(1); 
   const [selectedDate, setSelectedDate] = useState('');
 
   useEffect(() => {
@@ -29,20 +26,6 @@ const App = () => {
       return () => clearInterval(interval);
     }
   }, [phase]);
-
-  const moveNoButton = () => {
-    const x = Math.random() * (window.innerWidth * 0.7);
-    const y = Math.random() * (window.innerHeight * 0.7);
-    setNoStyle({
-      position: 'fixed',
-      left: `${x}px`,
-      top: `${y}px`,
-      transition: '0.15s cubic-bezier(0.18, 0.89, 0.32, 1.28)',
-      zIndex: 999
-    });
-    setNoCount(noCount + 1);
-    setYesScale(prev => prev + 0.2);
-  };
 
   const triggerKisses = () => {
     const end = Date.now() + (6 * 1000);
